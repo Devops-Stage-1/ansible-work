@@ -1,0 +1,9 @@
+- name: Install GOCD-agent
+  ansible.builtin.shell:
+    labauto gocd-agent
+
+- name: copy wrapper.conf
+  ansible.builtin.template:
+    src: wrapper-properties.conf
+    dest: /home/gocd/go-agent-23.5.0/wrapper-config/wrapper-properties.conf
+
