@@ -1,6 +1,6 @@
 - name: Install GOCD-agent
   ansible.builtin.shell:
-    labauto gocd-agent
+    sudo labauto gocd-agent
 
 - name: copy wrapper.conf
   ansible.builtin.template:
