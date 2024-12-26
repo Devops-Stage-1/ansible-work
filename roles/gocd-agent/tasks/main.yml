@@ -1,0 +1,23 @@
+- name: Install the latest version of java
+  ansible.builtin.dnf:
+    name: java-17-openjdk
+    state: present
+
+- name: Add the user 'gocd'
+  ansible.builtin.user:
+    name: gocd
+
+- name: Unarchive gocd file that needs to be downloaded
+  ansible.builtin.unarchive:
+    src: https://download.gocd.org/binaries/23.5.0-18179/generic/go-agent-23.5.0-18179.zip
+    dest: /tmp
+    remote_src: yes
+    owner: gocd
+    group: gocd
+
+- name: Start Backend Service
+  ansible.builtin.systemd_service:
+    name: backend
+    state: restarted
+    enabled: yes
+    daemon_reload: yes

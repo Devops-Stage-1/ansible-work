@@ -6,4 +6,8 @@
   ansible.builtin.template:
     src: wrapper-properties.conf
     dest: /home/gocd/go-agent-23.5.0/wrapper-config/wrapper-properties.conf
-
+            - name: Template a file to /etc/file.conf
+            ansible.builtin.template:
+              src: /mytemplates/foo.j2
+              dest: /etc/file.conf
+              owner: bin
