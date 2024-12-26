@@ -1,5 +1,0 @@
-- name: Install Workstation components
-  hosts: localhost
-  become: true
-  roles:
-    - gocd-agent
