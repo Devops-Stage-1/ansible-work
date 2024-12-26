@@ -1,6 +1,6 @@
 - name: Install the latest version of java
   ansible.builtin.dnf:
-    name: java-17-openjdk
+    name: java
     state: present
 
 - name: Add the user 'gocd'
